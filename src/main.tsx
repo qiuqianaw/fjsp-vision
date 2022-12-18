@@ -38,12 +38,36 @@ function Index() {
   function fetchUserInfo() {
     store.dispatch({
       type: 'update-userInfo',
-      payload: { userLoading: true },
+      payload: { userLoading: true }
     });
     axios.get('/api/user/userInfo').then((res) => {
+      console.log('res', res);
       store.dispatch({
         type: 'update-userInfo',
-        payload: { userInfo: res.data, userLoading: false },
+        payload: {
+          userInfo: {
+            name: '常镜洳',
+            avatar:
+              'https://picbedd.oss-cn-beijing.aliyuncs.com/202212181735982.png',
+            email: 'qiuqian@helijia.com',
+            job: 'frontend',
+            jobName: '前端开发工程师',
+            organization: 'Frontend',
+            organizationName: '前端',
+            location: 'dalian',
+            locationName: '大连',
+            introduction: '常镜洳的introduction',
+            personalWebsite: '',
+            verified: true,
+            phoneNumber: '177******27',
+            accountId: 'voeh-91152271',
+            registrationTime: '1988-04-28 22:59:45',
+            permissions: {
+              'menu.dashboard.overview': ['*']
+            }
+          },
+          userLoading: false
+        }
       });
     });
   }
@@ -64,7 +88,7 @@ function Index() {
     lang,
     setLang,
     theme,
-    setTheme,
+    setTheme
   };
 
   return (
@@ -73,14 +97,14 @@ function Index() {
         locale={getArcoLocale()}
         componentConfig={{
           Card: {
-            bordered: false,
+            bordered: false
           },
           List: {
-            bordered: false,
+            bordered: false
           },
           Table: {
-            border: false,
-          },
+            border: false
+          }
         }}
       >
         <Provider store={store}>
