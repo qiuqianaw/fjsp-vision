@@ -1,14 +1,33 @@
 import React from 'react';
-import { Typography, Card } from '@arco-design/web-react';
+import { Card, Space, Grid } from '@arco-design/web-react';
+import PieChart from './components/pieChart';
+import BarChart from './components/barChart';
+
+import DataTable from './components/dataTable';
+
+const { Row, Col } = Grid;
 
 function Overview() {
   return (
-    <Card style={{ height: '80vh' }}>
-      <Typography.Title heading={6}>
-        
-      </Typography.Title>
-      <Typography.Text>You can add content here :)</Typography.Text>
-    </Card>
+    <Space size={16} direction="vertical" style={{ width: '100%' }}>
+      {/* <Card> */}
+      <Row gutter={16}>
+        <Col span={12}>
+          <Card>
+            <BarChart />
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card size={'small'}>
+            <PieChart />
+          </Card>
+        </Col>
+      </Row>
+      {/* </Card> */}
+      <Card>
+        <DataTable />
+      </Card>
+    </Space>
   );
 }
 

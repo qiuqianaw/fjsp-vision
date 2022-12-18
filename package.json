@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@antv/data-set": "^0.11.8",
+    "@antv/g2plot": "^2.4.23",
     "@arco-design/color": "^0.4.0",
     "@arco-design/web-react": "^2.32.2",
     "@arco-plugins/vite-react": "^1.0.5",
