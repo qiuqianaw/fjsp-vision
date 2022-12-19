@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Card, Spin, Typography } from '@arco-design/web-react';
+import { Card, Spin } from '@arco-design/web-react';
 import { DonutChart } from 'bizcharts';
 import { generateColor } from '@/utils/randomColor';
 
@@ -49,7 +49,7 @@ const PieChart = () => {
 
   return (
     <Card>
-      <Typography.Title heading={6}>测试数据</Typography.Title>
+      {/* <Typography.Title heading={6}>测试数据</Typography.Title> */}
       <Spin loading={loading} style={{ display: 'block' }}>
         <DonutChart
           autoFit
