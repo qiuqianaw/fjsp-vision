@@ -59,7 +59,7 @@ const PieChart = () => {
           innerRadius={0.65}
           angleField="count"
           colorField="type"
-          color={generateColor(data.length)}
+          // color={generateColor(data.length)}
           interactions={[
             {
               type: 'element-single-selected'
