@@ -36,10 +36,10 @@ function Index() {
   }
 
   function fetchUserInfo() {
-    store.dispatch({
-      type: 'update-userInfo',
-      payload: { userLoading: true }
-    });
+    // store.dispatch({
+    //   type: 'update-userInfo',
+    //   payload: { userLoading: true }
+    // });
     store.dispatch({
       type: 'update-userInfo',
       payload: {
