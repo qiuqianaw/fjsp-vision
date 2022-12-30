@@ -14,36 +14,36 @@ cache:
     - node_modules/
     - dist/
 
-# pre-install:
-#   stage: pre-install
-#   only:
-#     changes:
-#       - package.json
-#   script:
-#     - echo "package.json has changed,start install🔥🔥🔥"
-#     - npm install
-#     - echo "finish install🔥🔥🔥"
+pre-install:
+  stage: pre-install
+  only:
+    changes:
+      - package.json
+  script:
+    - echo "package.json has changed,start install🔥🔥🔥"
+    - npm install
+    - echo "finish install🔥🔥🔥"
 
-# install:
-#   stage: install
-#   script:
-#     - echo "start install🔥🔥🔥"
-#     - - if [ ! -d "./node_modules/" ];then npm install;else echo "node_modules exists, skip this step"; fi
-#     - echo "finish install🔥🔥🔥"
+install:
+  stage: install
+  script:
+    - echo "start install🔥🔥🔥"
+    - - if [ ! -d "./node_modules/" ];then npm install;else echo "node_modules exists, skip this step"; fi
+    - echo "finish install🔥🔥🔥"
 
-# lint:
-#   stage: lint
-#   script:
-#     - echo "start lint🚬🚬🚬"
-#     - npm run eslint
-#     - npm run stylelint
-#     - echo "finish lint🚬🚬🚬"
+lint:
+  stage: lint
+  script:
+    - echo "start lint🚬🚬🚬"
+    - npm run eslint
+    - npm run stylelint
+    - echo "finish lint🚬🚬🚬"
 
 build:
   stage: build
-  # only:
-  #   refs:
-  #     - main
+  only:
+    refs:
+      - main
   script:
     - echo "start build💪💪💪"
     - npm run build
@@ -51,9 +51,9 @@ build:
 
 deploy:
   stage: deploy
-  # only:
-  #   refs:
-  #     - main
+  only:
+    refs:
+      - main
   script:
     - echo "deploy to server✨✨✨"
     - ssh -i user.key root@qiuqian.xyz "rm -rf /home/depolyed/fjsp-vision"
