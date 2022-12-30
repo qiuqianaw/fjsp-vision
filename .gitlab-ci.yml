@@ -33,6 +33,9 @@ install:
 
 lint:
   stage: lint
+  except:
+    refs:
+      - main
   script:
     - echo "start lint🚬🚬🚬"
     - npm run eslint
