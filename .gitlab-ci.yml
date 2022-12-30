@@ -56,6 +56,6 @@ deploy:
       - main
   script:
     - echo "deploy to server✨✨✨"
-    - ssh -i user.key root@qiuqian.xyz "rm -rf /home/depolyed/fjsp-vision/dist"
-    - scp -prq ./dist/. root@qiuqian.xyz:/home/depolyed/fjsp-vision/dist
+    - ssh -i user.key root@qiuqian.xyz "rm -rf /home/depolyed/fjsp-vision"
+    - scp -prq ./dist/. root@qiuqian.xyz:/home/depolyed/fjsp-vision
     - echo "well done~~👏👏👏"
