@@ -54,9 +54,8 @@ deploy:
   only:
     refs:
       - main
-  before_script:
-    - echo "deploy to server✨✨✨"
   script:
-    - scp -r ./dist/* root@qiuqian.xyz:/home/depolyed/fjsp-vision/dist
-  after_script:
+    - echo "deploy to server✨✨✨"
+    - ssh -i user.key root@qiuqian.xyz "rm -rf /home/depolyed/fjsp-vision/dist"
+    - scp -prq ./dist/. root@qiuqian.xyz:/home/depolyed/fjsp-vision/dist
     - echo "well done~~👏👏👏"
