@@ -51,9 +51,9 @@ build:
 
 deploy:
   stage: deploy
-  only:
-    refs:
-      - main
+  # only:
+  #   refs:
+  #     - main
   script:
     - echo "deploy to server✨✨✨"
     - ssh -i user.key root@qiuqian.xyz "rm -rf /home/depolyed/fjsp-vision"
