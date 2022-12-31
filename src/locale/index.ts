@@ -43,6 +43,8 @@ const i18n = {
     'menu.dashboard.workplace': '工作台',
     'menu.dashboard.overview': '概况总览',
     'menu.scheduledReception': '车间计划接收',
+    'menu.scheduledReception.newOrder': '新订单',
+    'menu.scheduledReception.acceptedOrder': '已接收',
     'menu.algorithmConfig': '算法调度配置',
     'menu.jobScheduling': '工序作业排产',
     'menu.productionTracking': '实时生产跟踪',

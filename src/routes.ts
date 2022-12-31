@@ -28,7 +28,17 @@ export const routes: IRoute[] = [
   },
   {
     name: 'menu.scheduledReception',
-    key: 'scheduledReception'
+    key: 'scheduledReception',
+    children: [
+      {
+        name: 'menu.scheduledReception.newOrder',
+        key: 'scheduledReception/newOrder'
+      },
+      {
+        name: 'menu.scheduledReception.acceptedOrder',
+        key: 'scheduledReception/acceptedOrder'
+      }
+    ]
   },
   {
     name: 'menu.algorithmConfig',
