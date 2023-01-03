@@ -74,6 +74,9 @@ const data = [
 function acceptedOrder() {
   return (
     <Space size={16} direction="vertical" style={{ width: '100%' }}>
+      {/* <Card>
+        <SearchForm />
+      </Card> */}
       <Card>
         <SearchForm />
         <Typography.Title heading={6}>已接收订单</Typography.Title>

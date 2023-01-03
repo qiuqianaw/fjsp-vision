@@ -35,24 +35,23 @@ function SearchForm() {
         labelCol={{ span: 5 }}
         wrapperCol={{ span: 19 }}
       >
-        <Row gutter={8}>
-          <Col span={6}>
+        <Row gutter={24}>
+          <Col span={12}>
             <Form.Item label="订单编号" field="orderId">
               <Input placeholder="请输入订单编号" allowClear />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col span={12}>
             <Form.Item label="优先级" field="priority">
               <Select placeholder="请选择优先级" mode="multiple" allowClear />
             </Form.Item>
           </Col>
-
-          <Col span={6}>
+          <Col span={12}>
             <Form.Item label="状态" field="status">
               <Select placeholder="请选择状态" mode="multiple" allowClear />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col span={12}>
             <Form.Item label="时间" field="createdTime">
               <DatePicker.RangePicker
                 allowClear

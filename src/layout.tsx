@@ -4,15 +4,16 @@ import { Layout, Menu, Breadcrumb, Spin } from '@arco-design/web-react';
 import cs from 'classnames';
 import {
   IconDashboard,
-  IconTag,
   IconMenuFold,
   IconMenuUnfold,
   IconExport,
   IconCodeBlock,
-  IconSort,
   IconDragArrow,
   IconEdit,
-  IconAlignLeft
+  IconAlignLeft,
+  IconFolderAdd,
+  IconFolder,
+  IconCommon
 } from '@arco-design/web-react/icon';
 import { useSelector } from 'react-redux';
 import qs from 'query-string';
@@ -42,13 +43,17 @@ function getIconFromKey(key: string) {
     case 'algorithmConfig':
       return <IconCodeBlock className={styles.icon} />;
     case 'jobScheduling':
-      return <IconSort className={styles.icon} />;
+      return <IconCommon className={styles.icon} />;
     case 'productionTracking':
       return <IconDragArrow className={styles.icon} />;
     case 'resultAdjust':
       return <IconEdit className={styles.icon} />;
     case 'statisticalAnalysis':
       return <IconAlignLeft className={styles.icon} />;
+    case 'scheduledReception/newOrder':
+      return <IconFolderAdd className={styles.icon} />;
+    case 'scheduledReception/acceptedOrder':
+      return <IconFolder className={styles.icon} />;
     default:
       return <div className={styles['icon-empty']} />;
   }
