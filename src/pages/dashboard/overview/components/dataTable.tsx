@@ -1,30 +1,7 @@
 import React from 'react';
-import { Table, TableColumnProps, Typography } from '@arco-design/web-react';
+import { Table, Typography } from '@arco-design/web-react';
+import { newOrderColumns } from '@/view/tableColumns';
 
-const columns: TableColumnProps[] = [
-  {
-    title: '序号',
-    dataIndex: 'id',
-    width: 80
-  },
-  {
-    title: '订单编号',
-    dataIndex: 'orderId'
-  },
-  {
-    title: '到达时间',
-    dataIndex: 'arriveTime'
-  },
-  {
-    title: '优先级',
-    dataIndex: 'priority',
-    width: 80
-  },
-  {
-    title: '完工时间',
-    dataIndex: 'finishTime'
-  }
-];
 const data = [
   {
     id: '1',
@@ -51,7 +28,7 @@ const DataTable = () => {
           wrapper: true,
           cell: true
         }}
-        columns={columns}
+        columns={newOrderColumns}
         data={data}
       />
     </div>

@@ -1,41 +1,8 @@
 import React from 'react';
-import {
-  Table,
-  TableColumnProps,
-  Card,
-  Typography,
-  Space
-} from '@arco-design/web-react';
+import { Table, Card, Typography, Space } from '@arco-design/web-react';
 import SearchForm from './form';
+import { acceptedOrderColumns } from '@/view/tableColumns';
 
-const columns: TableColumnProps[] = [
-  {
-    title: '序号',
-    dataIndex: 'id',
-    width: 80
-  },
-  {
-    title: '订单编号',
-    dataIndex: 'orderId'
-  },
-  {
-    title: '到达时间',
-    dataIndex: 'arriveTime'
-  },
-  {
-    title: '优先级',
-    dataIndex: 'priority',
-    width: 80
-  },
-  {
-    title: '完工日期',
-    dataIndex: 'finishTime'
-  },
-  {
-    title: '状态',
-    dataIndex: 'status'
-  }
-];
 const data = [
   {
     id: '1',
@@ -74,9 +41,6 @@ const data = [
 function acceptedOrder() {
   return (
     <Space size={16} direction="vertical" style={{ width: '100%' }}>
-      {/* <Card>
-        <SearchForm />
-      </Card> */}
       <Card>
         <SearchForm />
         <Typography.Title heading={6}>已接收订单</Typography.Title>
@@ -85,7 +49,7 @@ function acceptedOrder() {
             wrapper: true,
             cell: true
           }}
-          columns={columns}
+          columns={acceptedOrderColumns}
           data={data}
         />
       </Card>
