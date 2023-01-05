@@ -13,7 +13,9 @@ import {
   IconAlignLeft,
   IconFolderAdd,
   IconFolder,
-  IconCommon
+  IconCommon,
+  IconSettings,
+  IconCheckSquare
 } from '@arco-design/web-react/icon';
 import { useSelector } from 'react-redux';
 import qs from 'query-string';
@@ -54,6 +56,12 @@ function getIconFromKey(key: string) {
       return <IconFolderAdd className={styles.icon} />;
     case 'scheduledReception/acceptedOrder':
       return <IconFolder className={styles.icon} />;
+    case 'algorithmConfig/schedulingConfig':
+      return <IconSettings className={styles.icon} />;
+    case 'jobScheduling/planningSimulation':
+      return <IconSettings className={styles.icon} />;
+      case 'jobScheduling/schedulingResult':
+    return <IconCheckSquare className={styles.icon} />;
     default:
       return <div className={styles['icon-empty']} />;
   }

@@ -42,11 +42,27 @@ export const routes: IRoute[] = [
   },
   {
     name: 'menu.algorithmConfig',
-    key: 'algorithmConfig'
+    key: 'algorithmConfig',
+    children: [
+      {
+        name: 'menu.algorithmConfig.schedulingConfig',
+        key: 'algorithmConfig/schedulingConfig'
+      }
+    ]
   },
   {
     name: 'menu.jobScheduling',
-    key: 'jobScheduling'
+    key: 'jobScheduling',
+    children: [
+      {
+        name: 'menu.jobScheduling.planningSimulation',
+        key: 'jobScheduling/planningSimulation'
+      },
+      {
+        name: 'menu.jobScheduling.schedulingResult',
+        key: 'jobScheduling/schedulingResult'
+      }
+    ]
   },
   {
     name: 'menu.productionTracking',
