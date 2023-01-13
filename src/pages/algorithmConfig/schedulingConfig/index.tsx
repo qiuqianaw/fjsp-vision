@@ -10,6 +10,7 @@ import {
   // Checkbox
 } from '@arco-design/web-react';
 import styles from './style/index.module.less';
+import useForm from '@arco-design/web-react/es/Form/useForm';
 const options = [
   '完工时间',
   '机器总负荷',
@@ -21,15 +22,16 @@ const options = [
   '生产成本'
 ];
 function SchedulingConfig() {
+  const [form] = useForm()
   return (
     <div className={styles.container}>
       <Card style={{ marginBottom: '40px' }}>
         <Typography.Title heading={6}>调度配置</Typography.Title>
         <div className={styles.wrapper}>
-          <Form className={styles.form}>
-            <Form.Item label={'工件数'} required initialValue="36">
+          <Form className={styles.form} form={form}>
+            <Form.Item label={'工件数'} required>
               <div>
-                <Input placeholder={'请输入工件数'} />
+                <Input placeholder={'请输入工件数'} defaultValue="36" />
                 {/* <CheckboxGroup
                   direction="vertical"
                   options={['Option A', 'Option B', 'Option C']}
@@ -37,7 +39,7 @@ function SchedulingConfig() {
               </div>
             </Form.Item>
             <Form.Item label={'工序数'} required>
-              <Input placeholder={'请输入工序数'} />
+              <Input placeholder={'请输入工序数'} defaultValue="205" />
             </Form.Item>
             <Form.Item label={'工件的工序数'} required>
               <Button type="primary">生成文件</Button>
@@ -47,6 +49,7 @@ function SchedulingConfig() {
                 <Input
                   style={{ marginRight: '20px' }}
                   placeholder={'请输入机床数'}
+                  defaultValue="10"
                 />
                 <Button type="primary">选择机床</Button>
               </div>
@@ -54,8 +57,8 @@ function SchedulingConfig() {
             <Form.Item label={'工序加工工时'} required>
               <Button type="primary">生成文件</Button>
             </Form.Item>
-            <Form.Item label={'单位时间到达平均数'} required initialValue="100">
-              <Select>
+            <Form.Item label={'单位时间到达平均数'} required>
+              <Select placeholder="请选择单位时间到达平均数">
                 <Select.Option value="100">100</Select.Option>
                 <Select.Option value="200">200</Select.Option>
                 <Select.Option value="300">300</Select.Option>
@@ -64,7 +67,11 @@ function SchedulingConfig() {
             <Form.Item label={'惩罚系数'} required>
               <Button type="primary">生成文件</Button>
             </Form.Item>
-            <Form.Item label={'生产目标'} required>
+            <Form.Item
+              label={'生产目标'}
+              required
+              initialValue={['机器总负荷']}
+            >
               <Select
                 mode="multiple"
                 maxTagCount={{

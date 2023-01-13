@@ -24,6 +24,28 @@ function Index() {
   const [lang, setLang] = useStorage('arco-lang', 'zh-CN');
   const [theme, setTheme] = useStorage('arco-theme', 'light');
 
+  const happyNewYear = () => {
+    const v =
+      '\n                      /\\   /\\' +
+      '\n                     /  : /  |' +
+      '\n                    :   :`  /' +
+      '\n                     \\     .                 ________________' +
+      '\n                      \\   :.                |  哈  哈  哈  哈 |' +
+      '\n                      .`     `.              ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯' +
+      '\n                     :     0   \\         ____                ____' +
+      '\n                   ..`          ;       | 哈 |               | 哈 |' +
+      '\n               . `           `.¯        | 哈 |       2       | 哈 |' +
+      '\n             .`                :        | 哈 |       0       | 哈 |' +
+      '\n          .`                   .        | 哈 |       2       | 哈 |' +
+      '\n        .`                     :        | 哈 |       3       | 哈 |' +
+      '\n       .    Happy New Year     .        | 哈 |               | 哈 |' +
+      '\n      .                     .`          | 哈 |               | 哈 |' +
+      '\n   .. `                  .`              ¯¯¯                  ¯¯¯' +
+      '\n  :  ``             ;.  `、' +
+      '\n  `..`._____________::____)';
+    console.log(v);
+  };
+
   function getArcoLocale() {
     switch (lang) {
       case 'zh-CN':
@@ -75,6 +97,7 @@ function Index() {
     // } else if (window.location.pathname.replace(/\//g, '') !== 'login') {
     // window.location.pathname = '/login';
     // }
+    happyNewYear();
   }, []);
 
   useEffect(() => {
