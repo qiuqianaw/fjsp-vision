@@ -19,7 +19,7 @@ const SchedulingConfig = () => {
   const handleReset = () => {
     formRef && formRef.current && formRef.current.resetFields();
   };
-  
+
   const handleSubmit = () => {
     formRef.current.validate().then((values) => {
       console.log({ values });
@@ -42,6 +42,7 @@ const SchedulingConfig = () => {
             ref={formRef}
             layout="horizontal"
             initialValues={initialValues}
+            size={'small'}
           >
             <Form.Item field="workPiece" label={'工件数'} required>
               <Select

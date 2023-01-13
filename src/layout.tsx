@@ -242,11 +242,11 @@ function PageLayout() {
             >
               <div className={styles['menu-wrapper']}>
                 <Menu
-                  autoOpen
+                  // autoOpen
                   collapse={collapsed}
                   onClickMenuItem={onClickMenuItem}
                   selectedKeys={selectedKeys}
-                  // openKeys={openKeys}
+                  openKeys={openKeys}
                   onClickSubMenu={(_, openKeys) => {
                     setOpenKeys(openKeys);
                   }}

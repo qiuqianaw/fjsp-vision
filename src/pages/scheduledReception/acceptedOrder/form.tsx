@@ -34,6 +34,7 @@ function SearchForm() {
         labelAlign="right"
         labelCol={{ span: 5 }}
         wrapperCol={{ span: 19 }}
+        size={'small'}
       >
         <Row gutter={24}>
           <Col span={12}>
