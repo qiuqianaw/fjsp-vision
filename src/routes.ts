@@ -9,11 +9,12 @@ export type IRoute = AuthParams & {
   children?: IRoute[];
   // 当前路由是否渲染菜单项，为 true 的话不会在菜单中显示，但可通过路由地址访问。
   ignore?: boolean;
+  disabled?: boolean;
 };
 
 export const routes: IRoute[] = [
   {
-    name: 'menu.dashboard',
+    name: 'menu.dashboard', // 仪表盘
     key: 'dashboard',
     children: [
       // {
@@ -21,60 +22,74 @@ export const routes: IRoute[] = [
       //   key: 'dashboard/workplace'
       // },
       {
-        name: 'menu.dashboard.overview',
+        name: 'menu.dashboard.overview', // 概况总览
         key: 'dashboard/overview'
       }
     ]
   },
   {
-    name: 'menu.scheduledReception',
+    name: 'menu.scheduledReception', // 车间计划接收
     key: 'scheduledReception',
     children: [
       {
-        name: 'menu.scheduledReception.newOrder',
+        name: 'menu.scheduledReception.newOrder', // 新订单
         key: 'scheduledReception/newOrder'
       },
       {
-        name: 'menu.scheduledReception.acceptedOrder',
+        name: 'menu.scheduledReception.acceptedOrder', // 已接收
         key: 'scheduledReception/acceptedOrder'
       }
     ]
   },
   {
-    name: 'menu.algorithmConfig',
+    name: 'menu.algorithmConfig', // 算法调度配置
     key: 'algorithmConfig',
     children: [
       {
-        name: 'menu.algorithmConfig.schedulingConfig',
+        name: 'menu.algorithmConfig.schedulingConfig', // 调度配置
         key: 'algorithmConfig/schedulingConfig'
       }
     ]
   },
   {
-    name: 'menu.jobScheduling',
+    name: 'menu.jobScheduling', // 工序作业排产
     key: 'jobScheduling',
     children: [
       {
-        name: 'menu.jobScheduling.planningSimulation',
-        key: 'jobScheduling/planningSimulation'
+        name: 'menu.jobScheduling.planningSimulation', // 计划仿真
+        key: 'jobScheduling/planningSimulation',
+        disabled: true
       },
       {
-        name: 'menu.jobScheduling.schedulingResult',
+        name: 'menu.jobScheduling.schedulingResult', // 调度结果
         key: 'jobScheduling/schedulingResult'
       }
     ]
   },
   {
-    name: 'menu.productionTracking',
-    key: 'productionTracking'
+    name: 'menu.productionTracking', // 实时生产跟踪
+    key: 'productionTracking',
+    disabled: true
   },
   {
-    name: 'menu.resultAdjust',
-    key: 'resultAdjust'
+    name: 'menu.resultAdjust', // 排产结果调整
+    key: 'resultAdjust',
+    children: [
+      {
+        name: 'menu.resultAdjust.fineAdjustment', // 微调
+        key: 'resultAdjust/fineAdjustment',
+        disabled: true
+      },
+      {
+        name: 'menu.resultAdjust.reschedule', // 重调度
+        key: 'resultAdjust/reschedule'
+      }
+    ]
   },
   {
-    name: 'menu.statisticalAnalysis',
-    key: 'statisticalAnalysis'
+    name: 'menu.statisticalAnalysis', // 统计分析
+    key: 'statisticalAnalysis',
+    disabled: true
   }
 ];
 

@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import {
   Button,
   Card,
   Form,
   Input,
-  Message,
   Select,
   Space,
   Typography
@@ -20,14 +19,16 @@ const SchedulingConfig = () => {
   const handleReset = () => {
     formRef && formRef.current && formRef.current.resetFields();
   };
+  
   const handleSubmit = () => {
     formRef.current.validate().then((values) => {
-      Message.success(values);
+      console.log({ values });
     });
   };
+
   const handleSave = () => {
     formRef.current.validate().then((values) => {
-      Message.success(values);
+      console.log({ values });
     });
   };
 

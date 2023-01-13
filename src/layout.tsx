@@ -15,7 +15,10 @@ import {
   IconFolder,
   IconCommon,
   IconSettings,
-  IconCheckSquare
+  IconCheckSquare,
+  IconRefresh,
+  IconTool,
+  IconObliqueLine
 } from '@arco-design/web-react/icon';
 import { useSelector } from 'react-redux';
 import qs from 'query-string';
@@ -57,11 +60,15 @@ function getIconFromKey(key: string) {
     case 'scheduledReception/acceptedOrder':
       return <IconFolder className={styles.icon} />;
     case 'algorithmConfig/schedulingConfig':
-      return <IconSettings className={styles.icon} />;
+      return <IconTool className={styles.icon} />;
     case 'jobScheduling/planningSimulation':
       return <IconSettings className={styles.icon} />;
-      case 'jobScheduling/schedulingResult':
-    return <IconCheckSquare className={styles.icon} />;
+    case 'jobScheduling/schedulingResult':
+      return <IconCheckSquare className={styles.icon} />;
+    case 'resultAdjust/fineAdjustment':
+      return <IconObliqueLine className={styles.icon} />;
+    case 'resultAdjust/reschedule':
+      return <IconRefresh className={styles.icon} />;
     default:
       return <div className={styles['icon-empty']} />;
   }
@@ -179,7 +186,7 @@ function PageLayout() {
           );
         }
         menuMap.current.set(route.key, { menuItem: true });
-        return <MenuItem key={route.key}>{titleDom}</MenuItem>;
+        return <MenuItem disabled={route.disabled} key={route.key}>{titleDom}</MenuItem>;
       });
     };
   }
@@ -235,10 +242,11 @@ function PageLayout() {
             >
               <div className={styles['menu-wrapper']}>
                 <Menu
+                  autoOpen
                   collapse={collapsed}
                   onClickMenuItem={onClickMenuItem}
                   selectedKeys={selectedKeys}
-                  openKeys={openKeys}
+                  // openKeys={openKeys}
                   onClickSubMenu={(_, openKeys) => {
                     setOpenKeys(openKeys);
                   }}

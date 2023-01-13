@@ -52,6 +52,8 @@ const i18n = {
     'menu.jobScheduling.planningSimulation':'计划仿真',
     'menu.productionTracking': '实时生产跟踪',
     'menu.resultAdjust': '排产结果调整',
+    'menu.resultAdjust.fineAdjustment': '微调',
+    'menu.resultAdjust.reschedule': '重调度',
     'menu.statisticalAnalysis': '统计分析',
     'menu.user.info': '用户信息',
     'menu.user.setting': '用户设置',
