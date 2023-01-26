@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { Card, Spin } from '@arco-design/web-react';
 import { DonutChart } from 'bizcharts';
-import { generateColor } from '@/utils/randomColor';
 
 const PieChart = () => {
   const [data, setData] = useState([]);

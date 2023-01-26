@@ -67,9 +67,19 @@ export const routes: IRoute[] = [
     ]
   },
   {
-    name: 'menu.productionTracking', // 实时生产跟踪
-    key: 'productionTracking',
-    disabled: true
+    name: 'menu.realTimeProductionTracking', // 实时生产跟踪
+    key: 'realTimeProductionTracking',
+    children: [
+      {
+        name: 'menu.realTimeProductionTracking.productionTracking', // 生产跟踪
+        key: 'realTimeProductionTracking/productionTracking'
+      },
+      {
+        name: 'menu.realTimeProductionTracking.eventStatistic', // 事件统计
+        key: 'realTimeProductionTracking/eventStatistic',
+        disabled: true
+      }
+    ]
   },
   {
     name: 'menu.resultAdjust', // 排产结果调整

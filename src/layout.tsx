@@ -49,7 +49,7 @@ function getIconFromKey(key: string) {
       return <IconCodeBlock className={styles.icon} />;
     case 'jobScheduling':
       return <IconCommon className={styles.icon} />;
-    case 'productionTracking':
+    case 'realTimeProductionTracking':
       return <IconDragArrow className={styles.icon} />;
     case 'resultAdjust':
       return <IconEdit className={styles.icon} />;
