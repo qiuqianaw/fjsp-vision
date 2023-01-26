@@ -92,7 +92,7 @@ function ProductionTracking() {
             <TabPane key="2" title="生产进度" />
             <TabPane key="3" title="订单情况" />
             <TabPane key="4" title="设备运行" />
-            <TabPane key="4" title="人员情况" />
+            <TabPane key="5" title="人员情况" />
           </Tabs>
           <div>
             <Input.Group compact>

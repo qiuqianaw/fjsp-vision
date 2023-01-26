@@ -99,7 +99,17 @@ export const routes: IRoute[] = [
   {
     name: 'menu.statisticalAnalysis', // 统计分析
     key: 'statisticalAnalysis',
-    disabled: true
+    children: [
+      {
+        name: 'menu.statisticalAnalysis.statistic', // 统计
+        key: 'statisticalAnalysis/statistic'
+      },
+      {
+        name: 'menu.statisticalAnalysis.reportBack', // 汇报
+        key: 'statisticalAnalysis/reportBack',
+        disabled: true
+      }
+    ]
   }
 ];
 

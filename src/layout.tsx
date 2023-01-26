@@ -18,7 +18,9 @@ import {
   IconCheckSquare,
   IconRefresh,
   IconTool,
-  IconObliqueLine
+  IconObliqueLine,
+  IconList,
+  IconUserGroup
 } from '@arco-design/web-react/icon';
 import { useSelector } from 'react-redux';
 import qs from 'query-string';
@@ -69,6 +71,10 @@ function getIconFromKey(key: string) {
       return <IconObliqueLine className={styles.icon} />;
     case 'resultAdjust/reschedule':
       return <IconRefresh className={styles.icon} />;
+    case 'statisticalAnalysis/statistic':
+      return <IconList className={styles.icon} />;
+    case 'statisticalAnalysis/reportBack':
+      return <IconUserGroup className={styles.icon} />;
     default:
       return <div className={styles['icon-empty']} />;
   }
@@ -186,7 +192,11 @@ function PageLayout() {
           );
         }
         menuMap.current.set(route.key, { menuItem: true });
-        return <MenuItem disabled={route.disabled} key={route.key}>{titleDom}</MenuItem>;
+        return (
+          <MenuItem disabled={route.disabled} key={route.key}>
+            {titleDom}
+          </MenuItem>
+        );
       });
     };
   }

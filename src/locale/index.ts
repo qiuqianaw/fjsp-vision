@@ -57,6 +57,8 @@ const i18n = {
     'menu.resultAdjust.fineAdjustment': '微调',
     'menu.resultAdjust.reschedule': '重调度',
     'menu.statisticalAnalysis': '统计分析',
+    'menu.statisticalAnalysis.statistic': '统计',
+    'menu.statisticalAnalysis.reportBack': '汇报',
     'menu.user.info': '用户信息',
     'menu.user.setting': '用户设置',
     'menu.user.switchRoles': '切换角色',
