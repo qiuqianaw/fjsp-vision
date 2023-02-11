@@ -1,3 +1,6 @@
+import React from 'react';
+import { Button } from '@arco-design/web-react';
+
 export const newOrderColumns = [
   {
     title: '序号',
@@ -20,6 +23,12 @@ export const newOrderColumns = [
   {
     title: '完工时间',
     dataIndex: 'finishTime'
+  },
+  {
+    title: '操作',
+    render: () => {
+      return <Button type="primary">接收</Button>;
+    }
   }
 ];
 

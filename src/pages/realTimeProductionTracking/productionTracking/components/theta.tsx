@@ -4,7 +4,7 @@ import { Chart, Interval, Tooltip, Axis, Coordinate } from 'bizcharts';
 const Labelline = () => {
   const data = [
     { item: '订单动态抵达', count: 10 },
-    { item: '紧急插单', count: 10 },
+    { item: '紧急插单', count: 20 },
     { item: '订单取消', count: 14 },
     { item: '订单变更', count: 5 }
   ];
