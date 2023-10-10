@@ -28,7 +28,7 @@ install:
   stage: install
   script:
     - echo "start install🔥🔥🔥"
-    - - if [ ! -d "./node_modules/" ];then npm install;else echo "node_modules exists, skip this step"; fi
+    - if [ ! -d "./node_modules/" ];then npm install;else echo "node_modules exists, skip this step"; fi
     - echo "finish install🔥🔥🔥"
 
 lint:

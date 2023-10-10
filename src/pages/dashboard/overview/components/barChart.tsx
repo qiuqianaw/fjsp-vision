@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Chart, Tooltip, Interval } from 'bizcharts';
+import axios from 'axios';
 
 const data = [
   { name: '已完成', time: '2023-1-28', process: 10 },

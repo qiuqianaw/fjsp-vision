@@ -36,10 +36,11 @@ export default function LoginForm() {
   }
 
   function login(params) {
+    console.log(params)
     setErrorMessage('');
     setLoading(true);
     axios
-      .post('/api/user/login', params)
+      .post('http://localhost:8080/api/base/login', params)
       .then(() => {
         const res = {
           data: {
@@ -49,7 +50,7 @@ export default function LoginForm() {
         };
         const { status, msg } = res.data;
         if (status === 'ok') {
-          afterLoginSuccess(params);
+          // afterLoginSuccess(params);
         } else {
           setErrorMessage(msg || '登录出错，请刷新重试');
         }
@@ -61,7 +62,8 @@ export default function LoginForm() {
 
   function onSubmitClick() {
     formRef.current.validate().then((values) => {
-      login(values);
+      console.log(values)
+      login({...values, openCaptcha: 0});
     });
   }
 
@@ -77,17 +79,17 @@ export default function LoginForm() {
 
   return (
     <div className={styles['login-form-wrapper']}>
-      <div className={styles['login-form-title']}>柔性作业车间动态调度系统</div>
+      <div className={styles['login-form-title']}>基于DQN的柔性作业车间动态调度系统</div>
       <div className={styles['login-form-sub-title']}>请登录</div>
       <div className={styles['login-form-error-msg']}>{errorMessage}</div>
       <Form
         className={styles['login-form']}
         layout="vertical"
         ref={formRef}
-        initialValues={{ userName: 'admin', password: 'admin' }}
+        initialValues={{ username: 'admin', password: 'admin' }}
       >
         <Form.Item
-          field="userName"
+          field="username"
           rules={[{ required: true, message: '用户名不能为空' }]}
         >
           <Input

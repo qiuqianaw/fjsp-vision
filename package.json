@@ -82,5 +82,6 @@
     "*.{css, less}": [
       "stylelint --fix"
     ]
-  }
+  },
+  "proxy": "http://localhost:9009"
 }

@@ -1,38 +1,28 @@
 import React, { useContext, useEffect } from 'react';
 import {
-  Tooltip,
   Input,
   Avatar,
-  Select,
   Dropdown,
   Menu,
   Divider,
   Message,
-  Button,
+  Button
 } from '@arco-design/web-react';
 import {
-  IconLanguage,
-  IconNotification,
-  IconSunFill,
-  IconMoonFill,
   IconUser,
   IconSettings,
   IconPoweroff,
   IconExperiment,
   IconDashboard,
-  IconInteraction,
-  IconTag,
+  IconTag
 } from '@arco-design/web-react/icon';
 import { useSelector, useDispatch } from 'react-redux';
 import { GlobalState } from '@/store';
 import { GlobalContext } from '@/context';
 import useLocale from '@/utils/useLocale';
 import Logo from '@/assets/logo.svg';
-import MessageBox from '@/components/MessageBox';
-import IconButton from './IconButton';
 import Settings from '../Settings';
 import styles from './style/index.module.less';
-import defaultLocale from '@/locale';
 import useStorage from '@/utils/useStorage';
 import { generatePermission } from '@/routes';
 
@@ -65,9 +55,9 @@ function Navbar({ show }: { show: boolean }) {
       payload: {
         userInfo: {
           ...userInfo,
-          permissions: generatePermission(role),
-        },
-      },
+          permissions: generatePermission(role)
+        }
+      }
     });
   }, [role]);
 
@@ -140,7 +130,9 @@ function Navbar({ show }: { show: boolean }) {
       <div className={styles.left}>
         <div className={styles.logo}>
           <Logo />
-          <div className={styles['logo-name']}>柔性作业车间动态调度系统</div>
+          <div className={styles['logo-name']}>
+            基于DQN的柔性作业车间动态调度系统
+          </div>
         </div>
       </div>
       <ul className={styles.right}>
@@ -150,47 +142,6 @@ function Navbar({ show }: { show: boolean }) {
             placeholder={t['navbar.search.placeholder']}
           />
         </li>
-        <li>
-          <Select
-            triggerElement={<IconButton icon={<IconLanguage />} />}
-            options={[
-              { label: '中文', value: 'zh-CN' },
-              { label: 'English', value: 'en-US' },
-            ]}
-            value={lang}
-            triggerProps={{
-              autoAlignPopupWidth: false,
-              autoAlignPopupMinWidth: true,
-              position: 'br',
-            }}
-            trigger="hover"
-            onChange={(value) => {
-              setLang(value);
-              const nextLang = defaultLocale[value];
-              Message.info(`${nextLang['message.lang.tips']}${value}`);
-            }}
-          />
-        </li>
-        <li>
-          <MessageBox>
-            <IconButton icon={<IconNotification />} />
-          </MessageBox>
-        </li>
-        <li>
-          <Tooltip
-            content={
-              theme === 'light'
-                ? t['settings.navbar.theme.toDark']
-                : t['settings.navbar.theme.toLight']
-            }
-          >
-            <IconButton
-              icon={theme !== 'dark' ? <IconMoonFill /> : <IconSunFill />}
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            />
-          </Tooltip>
-        </li>
-        <Settings />
         {userInfo && (
           <li>
             <Dropdown droplist={droplist} position="br">

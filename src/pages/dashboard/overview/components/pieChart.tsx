@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Card, Spin } from '@arco-design/web-react';
 import { DonutChart } from 'bizcharts';
 
-const PieChart = () => {
-  const [data, setData] = useState([]);
+const PieChart = (props) => {
+  const { data } = props;
+  console.log(data)
   const [loading, setLoading] = useState(true);
+  const [chartData, setChartData] = useState([])
 
   const fetchData = () => {
     setLoading(true);
@@ -38,12 +40,23 @@ const PieChart = () => {
         }
       ]
     };
-    setData(res.data);
+    // setData(res.data);
     setLoading(false);
   };
 
   useEffect(() => {
     fetchData();
+    const res = []
+    data.map((item, index) => {
+      console.log(item)
+      res.push({
+        type: index,
+        count: item.sales
+        // percent: 0.48
+      })
+    })
+    console.log(res)
+    setChartData(res)
   }, []);
 
   return (
@@ -56,8 +69,8 @@ const PieChart = () => {
           data={data}
           radius={0.7}
           innerRadius={0.65}
-          angleField="count"
-          colorField="type"
+          angleField="sales"
+          colorField="year"
           // color={generateColor(data.length)}
           interactions={[
             {
@@ -92,7 +105,7 @@ const PieChart = () => {
                 color: 'rgb(--var(color-text-1))'
               },
               formatter: (_, data) => {
-                const sum = data.reduce((a, b) => a + b.count, 0);
+                const sum = data.reduce((a, b) => a + b.sales, 0);
                 return Number(sum).toLocaleString();
               }
             }

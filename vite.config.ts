@@ -7,14 +7,9 @@ import setting from './src/settings.json';
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    port: 9001,
+    port: 9000,
     proxy: {
-      '/api': {
-        target:
-          'https://www.fastmock.site/mock/2b0403b3004947f85eed027f272e7b61',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
+      '/api': "http://localhost:9009",
     },
   },
   resolve: {

@@ -107,7 +107,7 @@ export const routes: IRoute[] = [
       {
         name: 'menu.statisticalAnalysis.reportBack', // 汇报
         key: 'statisticalAnalysis/reportBack',
-        disabled: true
+        // disabled: true
       }
     ]
   }

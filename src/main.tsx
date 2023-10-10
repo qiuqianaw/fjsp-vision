@@ -66,22 +66,22 @@ function Index() {
       type: 'update-userInfo',
       payload: {
         userInfo: {
-          name: '常镜洳',
+          name: '邱谦',
           avatar:
-            'https://picbedd.oss-cn-beijing.aliyuncs.com/202212181735982.png',
+            'https://picbedd.oss-cn-beijing.aliyuncs.com/20221129162221.png',
           email: 'qiuqian@helijia.com',
           job: 'frontend',
           jobName: '前端开发工程师',
           organization: 'Frontend',
           organizationName: '前端',
-          location: 'dalian',
-          locationName: '大连',
-          introduction: '常镜洳的introduction',
+          location: 'hangzhou',
+          locationName: '杭州',
+          introduction: '邱谦的introduction',
           personalWebsite: '',
           verified: true,
-          phoneNumber: '177******27',
+          phoneNumber: '176******58',
           accountId: 'voeh-91152271',
-          registrationTime: '1988-04-28 22:59:45',
+          registrationTime: '2023-04-28 22:59:45',
           permissions: {
             'menu.dashboard.overview': ['*']
           }

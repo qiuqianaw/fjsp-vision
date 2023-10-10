@@ -8,7 +8,7 @@ function Footer(props: FooterProps = {}) {
   const { className, ...restProps } = props;
   return (
     <Layout.Footer className={cs(styles.footer, className)} {...restProps}>
-      FJSP-Vision@Chang Jingru
+      FJSP-Vision@19001020502-邱谦
     </Layout.Footer>
   );
 }
